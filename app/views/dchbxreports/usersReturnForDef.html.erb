@@ -43,7 +43,7 @@
 <% @issueOut.each do |issue_id,info| %>
   <% if info['thrashCount'].to_i > 9 %>
     <div class="issue" title="<%=info['issue']['subject'] %>">
-      <a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/issues/<%= issue_id %>">
+      <a href="<%= Setting.protocol %>://<%= Setting.host_name %>/issues/<%= issue_id %>">
         <%= issue_id %>: <%= info['thrashCount'] %>
       </a>
     </div>

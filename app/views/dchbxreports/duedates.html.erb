@@ -44,9 +44,9 @@
   <div class="stat">
     <h3>
       <% if barInfo['left'].nil? %>
-        <a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/projects/hbx_enroll_2016_roadmap/issues?query_id=<%= barInfo['total']['query_id'] %>">
+        <a href="<%= Setting.protocol %>://<%= Setting.host_name %>/projects/hbx_enroll_2016_roadmap/issues?query_id=<%= barInfo['total']['query_id'] %>">
       <% else %>
-        <a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/projects/hbx_enroll_2016_roadmap/issues?query_id=<%= barInfo['left']['query_id'] %>">
+        <a href="<%= Setting.protocol %>://<%= Setting.host_name %>/projects/hbx_enroll_2016_roadmap/issues?query_id=<%= barInfo['left']['query_id'] %>">
       <% end %>
         <% if barInfo['left'].nil? %>
           <%= barInfo['total']['issue_count'].to_s %>
@@ -66,7 +66,7 @@
           </tr>
         </tbody>
       </table>
-      <i><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/projects/hbx_enroll_2016_roadmap/issues?query_id=<%= barInfo['total']['query_id'] %>"><%= barInfo['total']['issue_count'].to_s %> total issues</a></i>
+      <i><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/projects/hbx_enroll_2016_roadmap/issues?query_id=<%= barInfo['total']['query_id'] %>"><%= barInfo['total']['issue_count'].to_s %> total issues</a></i>
     <% end %>
   </div>
 <% end %>
@@ -102,7 +102,7 @@
       <% currentStatusId = issue.status_id %>
     <% end %>
     <div class="issue" title="<%= issue.subject %>">
-      <a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/issues/<%=issue.id%>">
+      <a href="<%= Setting.protocol %>://<%= Setting.host_name %>/issues/<%=issue.id%>">
         <%= issue.id %>
       </a>
     </div>
@@ -124,7 +124,7 @@
       <% currentStatusId = issue.status_id %>
     <% end %>
     <div class="issue" title="<%= issue.subject %>">
-      <a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/issues/<%=issue.id%>">
+      <a href="<%= Setting.protocol %>://<%= Setting.host_name %>/issues/<%=issue.id%>">
         <%= issue.id %>
       </a>
     </div>

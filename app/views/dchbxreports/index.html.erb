@@ -25,16 +25,16 @@
         <% end %>
         <% current_project_id = q.project_id %>
         <% if q.project_id.nil? %>
-          <li><b><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/issues/">GLOBAL</a></b><ul>
+          <li><b><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/issues/">GLOBAL</a></b><ul>
         <% else %>
-          <li><b><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/projects/<%= Project.where(id: q.project_id).first.identifier %>/issues/"><%= Project.where(id: q.project_id).first.name %></a></b><ul>
+          <li><b><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/projects/<%= Project.where(id: q.project_id).first.identifier %>/issues/"><%= Project.where(id: q.project_id).first.name %></a></b><ul>
         <% end %>
       <% end %>
       <li>
         <% if q.project_id.nil? %>
-          <a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/issues?query_id=<%= q.id %>">
+          <a href="<%= Setting.protocol %>://<%= Setting.host_name %>/issues?query_id=<%= q.id %>">
         <% else %>
-          <a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/projects/<%= Project.where(id: q.project_id).first.identifier %>/issues?query_id=<%= q.id %>">
+          <a href="<%= Setting.protocol %>://<%= Setting.host_name %>/projects/<%= Project.where(id: q.project_id).first.identifier %>/issues?query_id=<%= q.id %>">
         <% end %>
           <%= q.name %>
         </a>
@@ -46,14 +46,14 @@
 <div id="reports">
   <h2>Reports</h2>
   <ul>
-    <li><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/reports/sla">SLA Report</a></li>
-    <li><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/reports/holdup">Average User Que Wait Time</a></li>
-    <li><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/reports/status">Oldest Issues Per Stats</a></li>
+    <li><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/reports/sla">SLA Report</a></li>
+    <li><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/reports/holdup">Average User Que Wait Time</a></li>
+    <li><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/reports/status">Oldest Issues Per Stats</a></li>
     <!--<li><a href="./reports/stakeholders">Stakeholder Issues</a></li>-->
-    <li><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/reports/duedates">Enroll Roadmap Progress</a></li>
-    <li><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/userpriorities/activity">Daily User Activity</a></li>
-    <li><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/reports/usersReturnForDef">Returned for Deficiencies Stats</a></li>
-    <li><a href="<%= Setting.where(name: 'protocol').first.value %>://<%=Setting.where(name: 'host_name').first.value %>/reports/velocity">Burn Down</a></li>
+    <li><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/reports/duedates">Enroll Roadmap Progress</a></li>
+    <li><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/userpriorities/activity">Daily User Activity</a></li>
+    <li><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/reports/usersReturnForDef">Returned for Deficiencies Stats</a></li>
+    <li><a href="<%= Setting.protocol %>://<%= Setting.host_name %>/reports/velocity">Burn Down</a></li>
   </ul>
 </div>
 
