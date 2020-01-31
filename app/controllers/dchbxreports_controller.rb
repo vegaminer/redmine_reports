@@ -146,8 +146,11 @@ class DchbxreportsController < ApplicationController
         end
       end
       if sla['type'] == "issue_status"
-        myIssueName = IssueStatus.where('id = ?',sla['id'].to_i).first.name
-        @slaReport[id]['name'] = "Issue Status: #{myIssueName}"
+	res = IssueStatus.where('id = ?',sla['id'].to_i)
+        unless res.empty? 	
+          myIssueName = IssueStatus.where('id = ?',sla['id'].to_i).first.name
+          @slaReport[id]['name'] = "Issue Status: #{myIssueName}"
+	end  
       end
       ##loop our issues and find our data
       issues.each do |issue|
